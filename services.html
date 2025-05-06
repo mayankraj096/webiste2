@@ -4,73 +4,147 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Services</title>
-  <link rel="stylesheet" href="css/style.css">
   <style>
-    /* Add fade-in effect to the body */
+    * {
+      box-sizing: border-box;
+    }
+
     body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #ffffff;
+      color: #333;
       animation: fadeIn 1.5s ease-in-out;
     }
 
-    /* Define the fadeIn keyframe animation */
     @keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
+      0% { opacity: 0; }
+      100% { opacity: 1; }
     }
 
-    /* Fade in for .services-list and its children */
+    .contact-strip {
+      background-color: #63ddf3d4;
+      padding: 20px 35px;
+      font-size: 16px;
+      display: flex;
+      justify-content: space-between;
+      color: black;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e0e0e0;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #004080;
+      font-weight: 500;
+    }
+
+    nav a.active {
+      border-bottom: 2px solid #004080;
+      padding-bottom: 4px;
+    }
+
+    .logo {
+      height: 50px;
+      max-width: 100%;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 28px;
+      margin: 40px 0 20px;
+      color: #004080;
+    }
+
+    img {
+      display: block;
+      margin: 20px auto;
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
     .services-list {
-      opacity: 0;
-      animation: fadeIn 2s ease-in-out forwards;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
     }
 
     .service-item {
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+      cursor: pointer;
+    }
+
+    .service-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #002b5c;
+    }
+
+    .service-desc {
+      margin-top: 10px;
+      font-size: 15px;
+      color: #555;
+      line-height: 1.6;
+      overflow: hidden;
+      height: 0;
       opacity: 0;
-      animation: fadeIn 2s ease-in-out forwards;
-      animation-delay: 0.5s;
+      transition: height 0.4s ease, opacity 0.4s ease;
     }
 
-    .service-item:nth-child(1) {
-      animation-delay: 0.5s;
+    .service-item.active .service-desc {
+      height: auto;
+      opacity: 1;
     }
 
-    .service-item:nth-child(2) {
-      animation-delay: 1s;
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #63ddf3d4;
+      font-size: 14px;
+      color: #777;
     }
 
-    .service-item:nth-child(3) {
-      animation-delay: 1s;
-    }
+    @media (max-width: 768px) {
+      .contact-strip {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+      }
 
-    .service-item:nth-child(4) {
-      animation-delay: 1s;
-    }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
 
-    .service-item:nth-child(5) {
-      animation-delay: 1s;
-    }
+      nav {
+        text-align: center;
+        width: 100%;
+        margin-top: 10px;
+      }
 
-    .service-item:nth-child(6) {
-      animation-delay: 1s;
-    }
-
-    .service-item:nth-child(7) {
-      animation-delay: 1s;
-    }
-
-    .service-item:nth-child(8) {
-      animation-delay: 1s;
-    }
-
-    .service-item:nth-child(9) {
-      animation-delay: 1s;
-    }
-
-    .service-item:nth-child(10) {
-      animation-delay: 1s;
+      nav a {
+        display: inline-block;
+        margin: 10px;
+      }
     }
   </style>
 </head>
@@ -96,7 +170,6 @@
 
   <section>
     <h2>Our Services</h2>
-    <!-- ✅ Working placeholder image -->
     <img src="images/service.jpg" alt="Services Overview">
 
     <div class="services-list">
@@ -144,6 +217,33 @@
   </section>
 
   <footer>© 2025 Meritproglobal. All rights reserved.</footer>
+
+  <script>
+    document.querySelectorAll('.service-title').forEach(title => {
+      title.addEventListener('click', () => {
+        const item = title.parentElement;
+        const desc = item.querySelector('.service-desc');
+
+        if (item.classList.contains('active')) {
+          desc.style.height = '0px';
+          desc.style.opacity = '0';
+          item.classList.remove('active');
+        } else {
+          // Collapse all
+          document.querySelectorAll('.service-item.active').forEach(activeItem => {
+            activeItem.querySelector('.service-desc').style.height = '0px';
+            activeItem.querySelector('.service-desc').style.opacity = '0';
+            activeItem.classList.remove('active');
+          });
+
+          // Expand selected
+          desc.style.height = desc.scrollHeight + 'px';
+          desc.style.opacity = '1';
+          item.classList.add('active');
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
