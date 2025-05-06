@@ -44,9 +44,17 @@ nav a {
 }
 
 /* Logo */
-.logo {
+/* .logo {
   height: 50px;
+} */
+
+.logo {
+  height: auto;
+  max-height: 50px;
+  width: auto;
+  max-width: 100%;
 }
+
 
 /* Headings */
 h2 {
