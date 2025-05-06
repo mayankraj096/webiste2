@@ -55,6 +55,12 @@ nav a {
   max-width: 100%;
 }
 
+@media (max-width: 480px) {
+  .logo {
+    max-height: 40px;
+  }
+}
+
 
 /* Headings */
 h2 {
