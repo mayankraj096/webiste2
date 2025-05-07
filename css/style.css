@@ -20,7 +20,7 @@ body {
 }
 
 /* Header */
-header {
+/* header {
   background-color: #fff;
   padding: 15px 20px;
   display: flex;
@@ -28,7 +28,24 @@ header {
   align-items: center;
   flex-wrap: wrap;
   border-bottom: 1px solid #e0e0e0;
+} */
+
+/* header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap; 
+  overflow-x: auto; 
+} */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap; /* Prevents wrapping */
+  overflow-x: auto;  /* Allows horizontal scroll on very small screens if needed */
 }
+
 
 nav {
   display: flex;
@@ -43,23 +60,6 @@ nav a {
   font-weight: 500;
 }
 
-/* Logo */
-/* .logo {
-  height: 50px;
-} */
-
-.logo {
-  height: auto;
-  max-height: 50px;
-  width: auto;
-  max-width: 100%;
-}
-
-@media (max-width: 480px) {
-  .logo {
-    max-height: 40px;
-  }
-}
 
 
 /* Headings */
@@ -225,6 +225,30 @@ nav a.active {
   margin-bottom: 8px;
   font-size: 16px;
   color: #333;
+}
+
+@media (max-width: 768px) {
+  .contact-strip {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 10px;
+  }
 }
 
 /* ===================
