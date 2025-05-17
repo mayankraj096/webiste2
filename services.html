@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Services</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background-color: #ffffff;
-      color: #333;
-      animation: fadeIn 1.5s ease-in-out;
-    }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        background-color: #ffffff;
+        color: #333;
+        animation: fadeIn 1.5s ease-in-out;
+      }
 
-    @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
-    }
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
 
-    .contact-strip {
-      background-color: #63ddf3d4;
-      padding: 20px 35px;
-      font-size: 16px;
-      display: flex;
-      justify-content: space-between;
-      color: black;
-    }
+      .contact-strip {
+        background-color: #63ddf3d4;
+        padding: 20px 35px;
+        font-size: 16px;
+        display: flex;
+        justify-content: space-between;
+        color: black;
+      }
 
-    /* header {
+      /* header {
       background-color: #fff;
       padding: 15px 20px;
       display: flex;
@@ -41,218 +46,252 @@
       flex-wrap: wrap;
     } */
 
-    header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: nowrap; /* Prevents wrapping */
-  overflow-x: auto;  /* Allows horizontal scroll on very small screens if needed */
-}
-
-
-    nav a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: #004080;
-      font-weight: 500;
-    }
-
-    nav a.active {
-      border-bottom: 2px solid #004080;
-      padding-bottom: 4px;
-    }
-
-    .logo {
-      height: 50px;
-      max-width: 100%;
-    }
-
-    h2 {
-      text-align: center;
-      font-size: 28px;
-      margin: 40px 0 20px;
-      color: #004080;
-    }
-
-    img {
-      display: block;
-      margin: 20px auto;
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-
-    .services-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      max-width: 1100px;
-      margin: 0 auto 60px;
-      padding: 0 20px;
-    }
-
-    .service-item {
-      background: #f9f9f9;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 20px;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
-      cursor: pointer;
-    }
-
-    .service-title {
-      font-size: 18px;
-      font-weight: 600;
-      color: #002b5c;
-    }
-
-    .service-desc {
-      margin-top: 10px;
-      font-size: 15px;
-      color: #555;
-      line-height: 1.6;
-      overflow: hidden;
-      height: 0;
-      opacity: 0;
-      transition: height 0.4s ease, opacity 0.4s ease;
-    }
-
-    .service-item.active .service-desc {
-      height: auto;
-      opacity: 1;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #63ddf3d4;
-      font-size: 14px;
-      color: #777;
-    }
-
-    @media (max-width: 768px) {
-      .contact-strip {
-        flex-direction: column;
-        gap: 5px;
-        text-align: center;
-      }
-
       header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav {
-        text-align: center;
-        width: 100%;
-        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap; /* Prevents wrapping */
+        overflow-x: auto; /* Allows horizontal scroll on very small screens if needed */
       }
 
       nav a {
-        display: inline-block;
-        margin: 5px;
+        margin-left: 20px;
+        text-decoration: none;
+        color: #004080;
+        font-weight: 500;
       }
-    }
-  </style>
-</head>
-<body>
 
-  <div class="contact-strip">
-    <span>Email: info@meritproglobal.com</span>
-    <span>Call Now: +91 92112 83371</span>
-  </div>
+      nav a.active {
+        border-bottom: 2px solid #004080;
+        padding-bottom: 4px;
+      }
 
-  <header>
-    <a href="index.html">
-      <img src="images/logo2.png" alt="Meritproglobal Logo" class="logo" />
-    </a>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html" class="active">Services</a>
-      <a href="career.html">Career</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+      .logo {
+        height: 50px;
+        max-width: 100%;
+      }
 
-  <section>
-    <h2>Our Services</h2>
-    <img src="images/service.jpg" alt="Services Overview">
+      h2 {
+        text-align: center;
+        font-size: 28px;
+        margin: 40px 0 20px;
+        color: #004080;
+      }
 
-    <div class="services-list">
-      <div class="service-item">
-        <div class="service-title">Project Management</div>
-        <div class="service-desc">We oversee end-to-end project execution, ensuring timely delivery, optimized resources, and measurable outcomes aligned with client goals.</div>
-      </div>
-      <div class="service-item">
-        <div class="service-title">Just-in-Time Recruitment</div>
-        <div class="service-desc">We provide qualified candidates precisely when needed, reducing idle time and increasing workforce efficiency for time-sensitive projects.</div>
-      </div>
-      <div class="service-item">
-        <div class="service-title">Temporary Recruitment</div>
-        <div class="service-desc">We supply skilled temporary staff to support your business during peak periods, special projects, or short-term assignments.</div>
-      </div>
-      <div class="service-item">
-        <div class="service-title">Permanent Recruitment</div>
-        <div class="service-desc">We help you find and hire long-term talent that aligns with your company culture and strategic vision.</div>
-      </div>
-      <div class="service-item">
-        <div class="service-title">Complete Outplacements</div>
-        <div class="service-desc">We support organizations and employees during transitions by offering career coaching, job search assistance, and redeployment services.</div>
-      </div>
-      <div class="service-item">
-        <div class="service-title">Training</div>
-        <div class="service-desc">We deliver customized training programs to upskill your workforce, improve productivity, and meet evolving business demands.</div>
-      </div>
-      <div class="service-item">
-        <div class="service-title">Payroll Management</div>
-        <div class="service-desc">We handle all aspects of payroll processing, ensuring accuracy, compliance, and timely salary disbursements.</div>
-      </div>
-      <div class="service-item">
-        <div class="service-title">Compliance Management</div>
-        <div class="service-desc">We help businesses stay up to date with labor laws and regulatory requirements, reducing risks and ensuring operational integrity.</div>
-      </div>
-      <div class="service-item">
-        <div class="service-title">Legal Services</div>
-        <div class="service-desc">Our legal experts provide guidance on employment law, contracts, dispute resolution, and regulatory compliance tailored to your industry.</div>
-      </div>
-      <div class="service-item">
-        <div class="service-title">Data Analytics and IT Services</div>
-        <div class="service-desc">We offer data-driven insights and tech solutions that drive strategic decision-making, streamline operations, and enhance digital transformation.</div>
-      </div>
-    </div>
-  </section>
+      img {
+        display: block;
+        margin: 20px auto;
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
 
-  <footer>© 2025 Meritproglobal. All rights reserved.</footer>
+      .services-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+        max-width: 1100px;
+        margin: 0 auto 60px;
+        padding: 0 20px;
+      }
 
-  <script>
-    document.querySelectorAll('.service-title').forEach(title => {
-      title.addEventListener('click', () => {
-        const item = title.parentElement;
-        const desc = item.querySelector('.service-desc');
+      .service-item {
+        background: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+        cursor: pointer;
+      }
 
-        if (item.classList.contains('active')) {
-          desc.style.height = '0px';
-          desc.style.opacity = '0';
-          item.classList.remove('active');
-        } else {
-          // Collapse all
-          document.querySelectorAll('.service-item.active').forEach(activeItem => {
-            activeItem.querySelector('.service-desc').style.height = '0px';
-            activeItem.querySelector('.service-desc').style.opacity = '0';
-            activeItem.classList.remove('active');
-          });
+      .service-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #002b5c;
+      }
 
-          // Expand selected
-          desc.style.height = desc.scrollHeight + 'px';
-          desc.style.opacity = '1';
-          item.classList.add('active');
+      .service-desc {
+        margin-top: 10px;
+        font-size: 15px;
+        color: #555;
+        line-height: 1.6;
+        overflow: hidden;
+        height: 0;
+        opacity: 0;
+        transition: height 0.4s ease, opacity 0.4s ease;
+      }
+
+      .service-item.active .service-desc {
+        height: auto;
+        opacity: 1;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #63ddf3d4;
+        font-size: 14px;
+        color: #777;
+      }
+
+      @media (max-width: 768px) {
+        .contact-strip {
+          flex-direction: column;
+          gap: 5px;
+          text-align: center;
         }
-      });
-    });
-  </script>
 
-</body>
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        nav {
+          text-align: center;
+          width: 100%;
+          margin-top: 10px;
+        }
+
+        nav a {
+          display: inline-block;
+          margin: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contact-strip">
+      <span>Email: info@meritproglobal.com</span>
+      <span>Call Now: +91 92112 83371</span>
+    </div>
+
+    <header>
+      <a href="index.html">
+        <img src="images/logo2.png" alt="Meritproglobal Logo" class="logo" />
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="career.html">Career</a>
+        <a href="contact.html" class="padded-link">Contact</a>
+      </nav>
+    </header>
+
+    <section>
+      <h2>Our Services</h2>
+      <img src="images/service.jpg" alt="Services Overview" />
+
+      <div class="services-list">
+        <div class="service-item">
+          <div class="service-title">Project Management</div>
+          <div class="service-desc">
+            We oversee end-to-end project execution, ensuring timely delivery,
+            optimized resources, and measurable outcomes aligned with client
+            goals.
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-title">Just-in-Time Recruitment</div>
+          <div class="service-desc">
+            We provide qualified candidates precisely when needed, reducing idle
+            time and increasing workforce efficiency for time-sensitive
+            projects.
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-title">Temporary Recruitment</div>
+          <div class="service-desc">
+            We supply skilled temporary staff to support your business during
+            peak periods, special projects, or short-term assignments.
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-title">Permanent Recruitment</div>
+          <div class="service-desc">
+            We help you find and hire long-term talent that aligns with your
+            company culture and strategic vision.
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-title">Complete Outplacements</div>
+          <div class="service-desc">
+            We support organizations and employees during transitions by
+            offering career coaching, job search assistance, and redeployment
+            services.
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-title">Training</div>
+          <div class="service-desc">
+            We deliver customized training programs to upskill your workforce,
+            improve productivity, and meet evolving business demands.
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-title">Payroll Management</div>
+          <div class="service-desc">
+            We handle all aspects of payroll processing, ensuring accuracy,
+            compliance, and timely salary disbursements.
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-title">Compliance Management</div>
+          <div class="service-desc">
+            We help businesses stay up to date with labor laws and regulatory
+            requirements, reducing risks and ensuring operational integrity.
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-title">Legal Services</div>
+          <div class="service-desc">
+            Our legal experts provide guidance on employment law, contracts,
+            dispute resolution, and regulatory compliance tailored to your
+            industry.
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-title">Data Analytics and IT Services</div>
+          <div class="service-desc">
+            We offer data-driven insights and tech solutions that drive
+            strategic decision-making, streamline operations, and enhance
+            digital transformation.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>© 2025 Meritproglobal. All rights reserved.</footer>
+
+    <script>
+      document.querySelectorAll(".service-title").forEach((title) => {
+        title.addEventListener("click", () => {
+          const item = title.parentElement;
+          const desc = item.querySelector(".service-desc");
+
+          if (item.classList.contains("active")) {
+            desc.style.height = "0px";
+            desc.style.opacity = "0";
+            item.classList.remove("active");
+          } else {
+            // Collapse all
+            document
+              .querySelectorAll(".service-item.active")
+              .forEach((activeItem) => {
+                activeItem.querySelector(".service-desc").style.height = "0px";
+                activeItem.querySelector(".service-desc").style.opacity = "0";
+                activeItem.classList.remove("active");
+              });
+
+            // Expand selected
+            desc.style.height = desc.scrollHeight + "px";
+            desc.style.opacity = "1";
+            item.classList.add("active");
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
